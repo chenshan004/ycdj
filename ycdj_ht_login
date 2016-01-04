@@ -12,7 +12,7 @@ driver=webdriver.Chrome()
 
 def ycdj_ht_login(driver):
     
-    ycdj_ht_url='http://192.168.8.102:8064/login.htm'
+    ycdj_ht_url='http://xxx/login.htm'
     #登陆后台页面
     driver.get(ycdj_ht_url)
     
@@ -29,13 +29,13 @@ def ycdj_ht_login(driver):
     print title
     
     if title==u'益盟投资学院——用户登录':
-        print '登陆成功1'
+        print '登陆成功11'
     #打印当前网址
     now_url=driver.current_url
     print now_url
     
-    if now_url==u'http://192.168.8.102:8064/login.htm':
-        print "登陆成功2"
+    if now_url==u'xxx/login.htm':
+        print "登陆成功22"
         
     
     time.sleep(2)
