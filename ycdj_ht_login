@@ -1,0 +1,46 @@
+#coding=utf-8
+'''
+时间：2015.04.13
+作者：chenfenping
+功能：ycdj后台登陆
+'''
+#登陆操作
+from selenium import webdriver
+import time
+
+driver=webdriver.Chrome()
+
+def ycdj_ht_login(driver):
+    
+    ycdj_ht_url='http://192.168.8.102:8064/login.htm'
+    #登陆后台页面
+    driver.get(ycdj_ht_url)
+    
+    driver.maximize_window()
+    
+    time.sleep(1)
+    
+    driver.find_element_by_id('Soft_user').send_keys("ycdj001")
+    driver.find_element_by_id('Soft_pwd').send_keys("123456")
+    driver.find_element_by_id('imagebut_save').click()
+    
+    #打印当前页面标题
+    title=driver.title
+    print title
+    
+    if title==u'益盟投资学院——用户登录':
+        print '登陆成功1'
+    #打印当前网址
+    now_url=driver.current_url
+    print now_url
+    
+    if now_url==u'http://192.168.8.102:8064/login.htm':
+        print "登陆成功2"
+        
+    
+    time.sleep(2)
+    return 0
+
+
+
+ycdj_ht_login(driver)
